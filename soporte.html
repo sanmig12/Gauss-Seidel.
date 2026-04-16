@@ -9,258 +9,204 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="telefono.css">
-  <link rel="stylesheet" href="soporte.css">
-    <title>Inicio</title>
-  
-  <style>
-
-  </style>
+    <link rel="stylesheet" href="soporte.css">
+    <title>Soporte</title>
 </head>
 
 <body>
-  <!-- Header -->
+
 <header class="header" id="header">
-        <nav class="nav container">
-          <a href="index.html" class="navL">
-            <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="favicon" class="navL-img">
-            Calculadora Gauss Seidel
-          </a>
-          <div class="navM" id="nav-menu">
+    <nav class="nav container">
+        <a href="index.html" class="navL">
+            <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="logo" class="navL-img">
+            Calculadora Gauss-Seidel
+        </a>
+        <div class="navM" id="nav-menu">
             <ul class="navList">
-              <li class="navItem">
-                <a href="index.html" class="navLink ">Inicio</a>
-              </li>
-              <li class="navItem">
-                <a href="nosotros.html" class="navLink">Nosotros</a>
-              </li>
-              <li class="navItem">
-                <a href="productos.html" class="navLink">Calculadora</a>
-              </li>
-              <li class="navItem">
-                <a href="soporte.html" class="navLink active-link">Soporte</a>
-              </li>
+                <li class="navItem"><a href="index.html" class="navLink">Inicio</a></li>
+                <li class="navItem"><a href="nosotros.html" class="navLink">Nosotros</a></li>
+                <li class="navItem"><a href="productos.html" class="navLink">Calculadora</a></li>
+                <li class="navItem"><a href="soporte.html" class="navLink active-link">Soporte</a></li>
             </ul>
-            <div class="navclose" id="nav-close">
-              <i class="bx bx-x"></i>
-            </div>
-          </div>
-          <div class="navToggle" id="nav-toggle">
-            <i class="bx bx-grid-alt"></i>
-          </div>
-        </nav>
-      </header>
-
-  <!-- Hero Section -->
-  <section class="support-hero" >
-    <div class="container">
-      <h1>Soporte 24/7 TechGuard</h1>
-      <p>Nuestro equipo de expertos está disponible en todo momento para asistirte con cualquier consulta o problema que puedas tener con nuestros productos y servicios.</p>
-    </div>
-  </section>
-
-  <!-- Contenido Soporte -->
-  <main class="main">
-    <div class="container">
-      <!-- Horarios de atención -->
-      <section class="section">
-        <h2 class="sectiontitle">🕒 Nuestros Horarios de Atención</h2>
-        <p class="section-subtitle">Aunque estamos disponibles 24/7, estos son los horarios de oficina</p>
-        <div class="schedule-container" id="horario-tec">
-          <!-- Los horarios se cargarán con JavaScript -->
+            <div class="navclose" id="nav-close"><i class="bx bx-x"></i></div>
         </div>
-      </section>
+        <div class="navToggle" id="nav-toggle"><i class="bx bx-grid-alt"></i></div>
+    </nav>
+</header>
 
-<!-- Atención 24/7 -->
-<!-- Atención 24/7 -->
+<!-- Hero -->
+<section class="support-hero">
+    <div class="container">
+        <h1>Soporte de la Calculadora Gauss-Seidel</h1>
+        <p>
+            Aquí puedes resolver dudas relacionadas con el uso de la calculadora,
+            el método de Gauss-Seidel y la interpretación de los resultados obtenidos.
+        </p>
+    </div>
+</section>
+
+<main class="main">
+<div class="container">
+
 <section class="section">
-  <h2 class="sectiontitle" id="contact">📞 Canales de Contacto Directo</h2>
-  <p class="section-subtitle">Elige el método que prefieras para comunicarte con nosotros</p>
-
-  <div class="grid">
-    <!-- Formulario de contacto -->
-    <div class="contact-card">
-      <div class="card-icon">
-        <i class="bx bx-envelope"></i>
-      </div>
-      <h3>Formulario de Contacto</h3>
-      <form id="contact-form" action="https://formspree.io/f/mdkeqzdr" method="POST">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="from_name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Correo</label>
-          <input type="email" id="email" name="to_email" required />
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">
-          <i class="bx bx-paper-plane"></i> Enviar Mensaje
-        </button>
-        <div id="respuesta" class="hidden-message" style="display: none;">
-          Gracias por tu mensaje. ¡Te responderemos pronto!
-        </div>
-      </form>
-    </div>
-  
-    <!-- Medios de contacto -->
-    <div class="contact-card">
-      <div class="card-icon">
-        <i class="bx bx-phone-call"></i>
-      </div>
-      <h3>Contacto Directo</h3>
-      <!-- ... tus enlaces de contacto aquí ... -->
-      <a href="tel:+526642819751" class="contact-method" style="text-decoration: none; color: inherit;">
-        <div class="icon">📞</div>
-        <div class="info">
-          <h4>Teléfono</h4>
-          <p>+52 (664) 281-9751 </p>
-        </div>
-      </a>
-      
-      <!-- Correo -->
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachguard7@gmail.com&su=atencion al cliente&body=Esto%20es%20una%20prueba" class="contact-method" style="text-decoration: none; color: inherit;">
-        <div class="icon">📧</div>
-        <div class="info">
-          <h4>Correo Electrónico</h4>
-          <p>teachguard7@gmail.com</p>
-        </div>
-      </a>
-      
-      <!-- WhatsApp -->
-      <a href="https://wa.me/6646787522" class="contact-method" target="_blank" style="text-decoration: none; color: inherit;">
-        <div class="icon">💬</div>
-        <div class="info">
-          <h4>WhatsApp</h4>
-          <p>+52 (664) 678-7522</p>
-        </div>
-      </a>
-
-      <!-- Chat en vivo -->
-      <div class="contact-method" style="text-decoration: none; color: inherit;">
-        <div class="icon">💻</div>
-        <div class="info">
-          <h4>Chat en Vivo</h4>
-          <p>Disponible 24/7</p>
-        </div>
-      </div>
-
-      <!-- Atención 24/7 como texto -->
-      <div class="contact-method" style="text-decoration: none; color: inherit;">
-        <div class="icon">🕒</div>
-        <div class="info">
-          <h4>Atención</h4>
-          <p>24/7</p>
-    </div>
-  </div>  
-  </div>
+    <h2 class="sectiontitle">🕒 Disponibilidad de Apoyo</h2>
+    <p class="section-subtitle">
+        Aunque la calculadora está disponible en todo momento, estos son los horarios de atención académica
+    </p>
+    <div class="schedule-container" id="horario-tec"></div>
 </section>
 
-      </section>
+<section class="section">
+    <h2 class="sectiontitle" id="contact">📞 Canales de Contacto</h2>
+    <p class="section-subtitle">
+        Contáctanos si tienes dudas sobre el método, errores de cálculo o uso de la plataforma
+    </p>
 
-      <!-- FAQ -->
-      <section class="section faq-container">
+    <div class="grid">
+
+        <div class="contact-card">
+            <div class="card-icon"><i class="bx bx-envelope"></i></div>
+            <h3>Formulario de Consulta</h3>
+
+            <form id="contact-form" action="https://formspree.io/f/mdkeqzdr" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="from_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" name="to_email" required />
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="bx bx-paper-plane"></i> Enviar Consulta
+                </button>
+                <div id="respuesta" class="hidden-message" style="display:none;">
+                    Tu mensaje fue enviado correctamente. Te responderemos pronto.
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-icon"><i class="bx bx-phone-call"></i></div>
+            <h3>Contacto Académico</h3>
+
+            <div class="contact-method">
+                <div class="icon">📧</div>
+                <div class="info">
+                    <h4>Correo</h4>
+                    <p>teachguard7@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="icon">💬</div>
+                <div class="info">
+                    <h4>Asistencia</h4>
+                    <p>Resolución de dudas académicas</p>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="icon">🕒</div>
+                <div class="info">
+                    <h4>Disponibilidad</h4>
+                    <p>24/7 (plataforma)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section faq-container">
     <h2 class="sectiontitle">❓ Preguntas Frecuentes</h2>
-    <p class="section-subtitle">Resuelve tus dudas sobre la calculadora del método de Gauss-Seidel</p>
-    
-    <div class="faq-list" style="margin-top: 2rem;">
-      
-      <div class="faq-item">
-        <div class="faq-question">¿Qué es el método de Gauss-Seidel?</div>
-        <div class="faq-answer">
-          <p>El método de Gauss-Seidel es un método iterativo utilizado para resolver sistemas de ecuaciones lineales. Mejora progresivamente las aproximaciones hasta converger a la solución del sistema.</p>
+    <p class="section-subtitle">
+        Resuelve tus dudas sobre la calculadora del método de Gauss-Seidel
+    </p>
+
+    <div class="faq-list" style="margin-top:2rem;">
+
+        <div class="faq-item">
+            <div class="faq-question">¿Qué es el método de Gauss-Seidel?</div>
+            <div class="faq-answer">
+                <p>
+                    Es un método iterativo para resolver sistemas de ecuaciones lineales,
+                    utilizando aproximaciones sucesivas hasta alcanzar la solución.
+                </p>
+            </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">¿Cómo ingreso los datos en la calculadora?</div>
-        <div class="faq-answer">
-          <p>Debes ingresar la matriz de coeficientes, el vector de términos independientes y una aproximación inicial. La calculadora procesará estos datos para realizar las iteraciones automáticamente.</p>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Qué datos debo ingresar en la calculadora?</div>
+            <div class="faq-answer">
+                <p>
+                    Debes ingresar la matriz de coeficientes, el vector de resultados
+                    y una aproximación inicial para iniciar las iteraciones.
+                </p>
+            </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">¿Cuántas iteraciones realiza el programa?</div>
-        <div class="faq-answer">
-          <p>El número de iteraciones depende del valor de tolerancia o del límite máximo de iteraciones definido por el usuario. El proceso se detiene cuando se alcanza la convergencia.</p>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo sé si el método converge?</div>
+            <div class="faq-answer">
+                <p>
+                    El método converge cuando el error es menor a la tolerancia establecida
+                    o cuando se cumple la dominancia diagonal del sistema.
+                </p>
+            </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">¿Qué significa que el método no converja?</div>
-        <div class="faq-answer">
-          <p>Significa que el sistema no cumple las condiciones necesarias, como la dominancia diagonal. En estos casos, el método puede no aproximarse a una solución correcta.</p>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Qué significa un error alto en el resultado?</div>
+            <div class="faq-answer">
+                <p>
+                    Indica que aún no se ha alcanzado una solución estable
+                    o que el sistema no cumple las condiciones de convergencia.
+                </p>
+            </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">¿Para qué materias es útil esta calculadora?</div>
-        <div class="faq-answer">
-          <p>Esta calculadora es especialmente útil en materias como Álgebra Lineal, Métodos Numéricos, Ingeniería y Análisis Matemático, tanto para estudiar como para verificar resultados.</p>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Para qué materias es útil esta herramienta?</div>
+            <div class="faq-answer">
+                <p>
+                    Es útil en Álgebra Lineal, Métodos Numéricos, Ingeniería
+                    y materias relacionadas con análisis matemático.
+                </p>
+            </div>
         </div>
-      </div>
 
     </div>
 </section>
-    </div>
-  </main>
 
+</div>
+</main>
 
-    <!--FOOTER-->
 <footer class="footer section">
     <div class="footercontainer container grid">
         <div class="footercontent">
             <a href="#" class="footerL">
-                <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="TechGuard Logo" class="footer-img">
-                Gauss Seidel
+                <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="logo" class="footer-img">
+                Método Gauss-Seidel
             </a>
-            <p class="footerdescription"><br>
-                Metodo iterativo para resolver sistemas de ecuaciones
+            <p class="footerdescription">
+                Herramienta educativa para resolver sistemas de ecuaciones lineales
             </p>
-
-            <div class="footersocial">
-                
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachguard7@gmail.com&su=atencion al cliente&body=Escribe%20tus%20comentarios%20" target="_blank" class="footersocial-link" title="Síguenos en Google">
-                    <i class="bx bxl-google"></i>
-                </a>
-            </div>
         </div>
-        <a href="#" class="scrollup" id="scroll-up">
-            <i class="bx bx-up-arrow-alt scrollupicon"></i>
-        </a>
     </div>
 </footer>
 
-  <div class="navbar-custom">
-    <nav class="navbar-container">
-            
+<div class="encabezado">
+    <h6 id="footer-text">
+        Ⓒ 2026. Calculadora Gauss-Seidel | Uso académico
+        <br>Realizado por Castro Bracamontes Sandra Marisol
+        <span id="fecha-hora"></span>
+    </h6>
 </div>
 
-
-    <!--ENCABEZADO-->
-    <div class="encabezado">
-        <h6 id="footer-text">
-            Ⓒ 2026. Gauss-Seidel Reservados todos los derechos mx | prod | 5921c999edda20d9a7ca637474539d734862014e |
-            <br>Realizado por Castro Bracamontes Sandra Marisol
-            <span id="fecha-hora"></span>
-        </h6>
-    </div>
-
-
-  <!-- Scripts -->
-  <script src="js/horarios.js"></script>
-  <script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-></script>
-<!-- 3) Tu lógica de newsletter -->
-<script src="js/soporte.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-   <script>
-     emailjs.init('ACzfn-t1fr278ILd_'); // ✅ tu Public Key // Aquí va tu User ID de EmailJS
-   </script>
-   <script src="js/encabezado.js"></script>
 </body>
 </html>
