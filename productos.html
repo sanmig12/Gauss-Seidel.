@@ -206,7 +206,16 @@ function resolver(){
  const dec=+document.getElementById("decimales").value;
  const f=v=>Number(v).toFixed(dec);
  const n=+nEl.value;
-    if (!esDiagonalDominante(A)) {
+let A=[],b=[],x=[];
+for(let i=0;i<n;i++){
+  A[i]=[];
+  for(let j=0;j<n;j++)A[i][j]=+document.getElementById(`A_${i}_${j}`).value;
+  b[i]=+document.getElementById(`b_${i}`).value;
+  x[i]=+document.getElementById(`x_${i}`).value;
+}
+
+/* 👇 AQUÍ PEGAS TU BLOQUE */
+if (!esDiagonalDominante(A)) {
     salida.innerHTML = `
     <div class="section" style="border-left:5px solid #ff4d4d;">
         <h2>Advertencia</h2>
@@ -217,14 +226,8 @@ function resolver(){
     </div>`;
     return;
 }
- let A=[],b=[],x=[];
- for(let i=0;i<n;i++){
-  A[i]=[];
-  for(let j=0;j<n;j++)A[i][j]=+document.getElementById(`A_${i}_${j}`).value;
-  b[i]=+document.getElementById(`b_${i}`).value;
-  x[i]=+document.getElementById(`x_${i}`).value;
- }
- let xnew=[...x],iter=0,error=Infinity,xHist=[];
+
+let xnew=[...x],iter=0,error=Infinity,xHist=[];
  let html=`<div class="section"><h2>Iteraciones</h2><div class="table-container"><table><tr><th>Iter</th>`;
  for(let j=0;j<n;j++)html+=`<th>x${j+1}</th>`;
  html+=`<th>Error</th></tr>`;
