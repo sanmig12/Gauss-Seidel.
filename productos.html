@@ -168,14 +168,13 @@
             <span id="fecha-hora"></span>
         </h6>
     </div>
-<!-- ================== SCRIPT ORIGINAL ================== -->
+
 <script>
-<script>
-const nEl = document.getElementById("n"),
-tolEl = document.getElementById("tol"),
-maxIterEl = document.getElementById("maxIter"),
-entradas = document.getElementById("entradas"),
-salida = document.getElementById("salida");
+const nEl = document.getElementById("n");
+const tolEl = document.getElementById("tol");
+const maxIterEl = document.getElementById("maxIter");
+const entradas = document.getElementById("entradas");
+const salida = document.getElementById("salida");
 
 /* ===================== VALIDACIÓN ===================== */
 function esDiagonalDominante(A) {
@@ -186,58 +185,43 @@ function esDiagonalDominante(A) {
         for (let j = 0; j < n; j++) {
             if (i !== j) suma += Math.abs(A[i][j]);
         }
-        if (Math.abs(A[i][i]) <= suma) return false;
+        if (Math.abs(A[i][i]) < suma) return false;
     }
     return true;
 }
 
-/* ===================== REORDENAMIENTO MEJORADO ===================== */
+/* ===================== PERMUTACIONES ===================== */
+function permutaciones(arr) {
+    if (arr.length <= 1) return [arr];
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        let resto = arr.slice(0, i).concat(arr.slice(i + 1));
+        for (let p of permutaciones(resto)) {
+            res.push([arr[i], ...p]);
+        }
+    }
+    return res;
+}
+
+/* ===================== REORDENAR CORRECTO ===================== */
 function reordenar(A, b, x) {
-    const n = A.length;
-    let usados = Array(n).fill(false);
+    const idx = [...Array(A.length).keys()];
+    const perms = permutaciones(idx);
 
-    let A2 = [], b2 = [], x2 = [];
+    for (let p of perms) {
+        let A2 = p.map(i => A[i]);
 
-    for (let i = 0; i < n; i++) {
-        let mejor = -1;
-        let idx = -1;
-
-        for (let j = 0; j < n; j++) {
-            if (usados[j]) continue;
-
-            let diag = Math.abs(A[j][i]);
-            let suma = 0;
-
-            for (let k = 0; k < n; k++) {
-                if (k !== i) suma += Math.abs(A[j][k]);
-            }
-
-            if (diag > suma && diag > mejor) {
-                mejor = diag;
-                idx = j;
-            }
+        if (esDiagonalDominante(A2)) {
+            return {
+                A: A2,
+                b: p.map(i => b[i]),
+                x: p.map(i => x[i]),
+                dominante: true
+            };
         }
-
-        // fallback si no hay dominante clara
-        if (idx === -1) {
-            let best = -1;
-            for (let j = 0; j < n; j++) {
-                if (usados[j]) continue;
-                let val = Math.abs(A[j][i]);
-                if (val > best) {
-                    best = val;
-                    idx = j;
-                }
-            }
-        }
-
-        usados[idx] = true;
-        A2[i] = A[idx];
-        b2[i] = b[idx];
-        x2[i] = x[idx];
     }
 
-    return { A: A2, b: b2, x: x2 };
+    return { A, b, x, dominante: false };
 }
 
 /* ===================== CREAR MATRIZ ===================== */
@@ -253,8 +237,10 @@ function crearEntradas() {
         for (let j = 0; j < n; j++) {
             html += `<td><input type="number" id="A_${i}_${j}" value="0"></td>`;
         }
-        html += `<td><input type="number" id="b_${i}" value="0"></td>
-                 <td><input type="number" id="x_${i}" value="0"></td></tr>`;
+        html += `
+            <td><input type="number" id="b_${i}" value="0"></td>
+            <td><input type="number" id="x_${i}" value="0"></td>
+        </tr>`;
     }
 
     entradas.innerHTML = html + `</table></div>`;
@@ -278,29 +264,34 @@ function resolver() {
     }
 
     /* ===================== REORDENAR ===================== */
-    let res = reordenar(A, b, x);
-    A = res.A;
-    b = res.b;
-    x = res.x;
+    let info = reordenar(A, b, x);
+    A = info.A; b = info.b; x = info.x;
 
-    /* ===================== VALIDACIÓN ===================== */
-    if (!esDiagonalDominante(A)) {
-        salida.innerHTML = `
+    let advertencia = "";
+
+    if (!info.dominante) {
+        advertencia = `
         <div class="section" style="border-left:5px solid orange;">
             <h2>Advertencia</h2>
             <p>
-                La matriz no es diagonalmente dominante incluso después del reordenamiento.
-                El método puede no converger.
+                No es estrictamente diagonal dominante.<br>
+                Puede converger, pero no está garantizado.
             </p>
         </div>`;
-        return;
     }
 
     /* ===================== GAUSS-SEIDEL ===================== */
-    let xnew = [...x], iter = 0, error = Infinity, xHist = [];
+    let xnew = [...x];
+    let iter = 0;
+    let error = Infinity;
+    let xHist = [];
 
-    let html = `<div class="section"><h2>Iteraciones</h2>
-    <div class="table-container"><table><tr><th>Iter</th>`;
+    let html = advertencia + `
+    <div class="section">
+    <h2>Iteraciones</h2>
+    <div class="table-container">
+    <table>
+    <tr><th>Iter</th>`;
 
     for (let j = 0; j < n; j++) html += `<th>x${j + 1}</th>`;
     html += `<th>Error</th></tr>`;
@@ -333,23 +324,40 @@ function resolver() {
     <div class="section"><h2>Convergencia</h2><div id="grafica"></div></div>`;
 
     salida.innerHTML = html;
+
     animarConvergencia(xHist);
 }
 
 /* ===================== GRÁFICA ===================== */
 function animarConvergencia(xHist) {
     const n = xHist[0].length;
-    let data = [];
 
+    let data = [];
     for (let j = 0; j < n; j++) {
-        data.push({ x: [], y: [], mode: 'lines+markers', name: `x${j + 1}` });
+        data.push({
+            x: [],
+            y: [],
+            mode: "lines+markers",
+            name: `x${j + 1}`
+        });
     }
 
     Plotly.newPlot("grafica", data, {
+        title: "Convergencia del método Gauss-Seidel",
+
+        xaxis: {
+            title: "Iteraciones"
+        },
+
+        yaxis: {
+            title: "Valor de las variables"
+        },
+
         paper_bgcolor: "#122c4a",
         plot_bgcolor: "#122c4a",
         font: { color: "#eaeaea" },
-        margin: { t: 30 }
+
+        margin: { t: 50 }
     });
 
     let k = 0;
@@ -366,15 +374,14 @@ function animarConvergencia(xHist) {
         );
 
         k++;
-    }, 350);
+    }, 300);
 }
 
 /* ===================== INICIO ===================== */
-window.onload = function () {
-    nEl.value = 2;
+window.onload = () => {
+    nEl.value = 3;
     crearEntradas();
 };
 </script>
-
 </body>
 </html>
