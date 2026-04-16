@@ -1,0 +1,354 @@
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .seccion-mision-vision {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .tarjeta {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .tarjeta:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 320px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .homeimg {
+        height: 200px;
+    }
+
+    .homebut {
+        flex-direction: column;
+        width: max-content;
+        row-gap: 1rem;
+    }
+
+    .categorycontainer,
+    .productcontainer {
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 576px) {
+    .aboutcontainer{
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+    .newslc{
+        display: grid;
+        grid-template-columns: .7fr;
+        justify-content: center;
+    }
+
+    .newsld{
+        padding: 0 3rem;
+    }
+}
+
+@media (min-width: 767px) {
+    .carrito-item {
+        margin-left: auto; /* Mueve el carrito al final del contenedor de navegación */
+    }
+    .navList {
+        display: flex;
+        justify-content: flex-end; /* Distribuye los elementos para que el carrito quede al lado de "Soporte" */
+    }
+    .carrito-boton {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 18px;
+    }
+
+    .navToggle {
+        position: relative;
+        z-index: 999;  /* Asegura que el menú esté por encima del carrito */
+    }
+    body {
+        margin: 0;
+    }
+    .section {
+        padding: 7rem 0 2rem;
+    }
+    .nav {
+        height: calc(3.5rem + 1.5rem);
+    }
+    .navclose,
+    .navToggle{
+        display: none;
+    }
+    .navList {
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+    .navLink {
+        text-transform: initial;
+        font-weight: initial;
+    }
+    .homecont {
+        padding: 8rem 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    .homeimg {
+        height: 300px;
+    }
+    .swiper-pagination {
+        margin-top: 2rem;
+    }
+    .categorycontainer {
+        grid-template-columns: repeat(3, 200px);
+        justify-content: center;
+    }
+    .aboutcontainer {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .abouttitle,
+    .aboutdata {
+        text-align: initial;
+    }
+    .abouting {
+        width: 250px;
+    }
+    .productcontainer{
+        grid-template-columns: repeat(3,200px);
+        justify-content: center;
+        gap: 2rem;
+    }
+    .discountcontainer {
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        align-items: center;
+        column-gap: 3rem;
+        padding: 3rem 0;
+    }
+
+    .discounttimg{
+        width: 350px;
+        order: -1;
+    }
+    .discountdata {
+        padding-right: 6rem;
+    }
+    .newslc {
+        grid-template-columns: .5fr;
+    }
+    .footercontainer {
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sectiontitle {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .homecont {
+        padding-top: 9rem;
+        gap: 3rem;
+    }
+    .homegroup {
+        padding-top: 0;
+    }
+    .homeimg {
+        height: 400px;
+        transform: translate(-3rem);
+    }
+    .homeindicator {
+        top: initial;
+        right: initial;
+        bottom: 15%;
+        left: 45%;
+    }
+    .homeindicator::after{
+        top: 0;
+        height: 75px;
+    }
+    .homedetails-img{
+        bottom: 0;
+        right: 58%;
+    }
+    .hometitle {
+        margin-bottom: 1.5rem;
+    }
+    .homedes {
+        margin-bottom: 2.5rem;
+        padding-right: 2rem;
+    }
+    .categorycontainer {
+        column-gap: 8rem;
+    }
+    .categoryimg {
+        width: 200px;
+    }
+    .aboutcontainer {
+        column-gap: 7rem;
+    }
+    .abouting{
+        width: 350px;
+    }
+    .aboutdescription {
+        padding-right: 2rem;
+    }
+    .productcontainer {
+        gap: 3.5rem;
+    }
+    .productcontent {
+        border-radius: 1.5rem;
+    }
+    .productimg {
+        width: 110px;
+    }
+    .producttitle {
+        font-size: 1rem;
+    }
+    .discountcontainer {
+        column-gap: 7rem;
+    }
+    .footercopy {
+        margin-top: 6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .homeimg {
+        height: 420px;
+    }
+    .swiper-pagination {
+        margin-top: 2.5rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footercontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footercontent {
+        text-align: center;
+    }
+
+    .footerL {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .footersocial {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 767px){
+    .header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: transparent;
+    }
+    .navM {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        background-color: #000c32;
+        z-index: 9999;
+        transform: translateX(100%); /* Start offscreen */
+        transition: transform 0.3s ease-in-out;
+    }
+    .navM.show-menu {
+        transform: translateX(0); /* Show menu when active */
+    }
+
+    .navList {
+        list-style: none;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 2rem; /* Añadido espacio para evitar que el texto "Inicio" esté pegado al borde superior */
+    }
+
+}
+
+@media (max-width: 768px) {
+    .footercontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footercontent {
+        text-align: center;
+    }
+
+    .footerL {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .footersocial {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+.realizado-por {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#footer-text {
+    text-align: center;
+}

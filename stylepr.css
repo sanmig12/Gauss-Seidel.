@@ -1,0 +1,107 @@
+
+body{
+    margin:0;
+    font-family:system-ui, Arial, sans-serif;
+    padding:12px;
+}
+
+h1,h2{
+    color:var(--primary);
+    text-align:center;
+}
+
+.section{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px;
+    margin:14px auto;
+    max-width:1200px;
+}
+
+.controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+input,button{
+    padding:10px;
+    border-radius:6px;
+    border:none;
+    font-size:16px;
+}
+
+input{
+    max-width:200px;
+    width:100%;
+}
+
+button{
+    background:var(--primary);
+    font-weight:600;
+    cursor:pointer;
+}
+
+.table-container{
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+table{
+    width:100%;
+    min-width:520px;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid var(--border);
+    padding:8px;
+    text-align:center;
+}
+
+th{ background:#16395f }
+
+.success{ color:#4caf50 }
+.warning{ color:#ffc107 }
+
+#grafica{
+    width:100%;
+    height:420px;
+}
+
+/* ================= BOTONES SIN MODIFICAR HTML ================= */
+
+/* Botón "Crear matriz" */
+button[onclick="crearEntradas()"]{
+    background:#1f3b5c;
+    color:#a9c9ff;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button[onclick="crearEntradas()"]:hover{
+    background:#2b4f7a;
+}
+
+/* Botón "Resolver" */
+button[onclick="resolver()"]{
+    background:linear-gradient(135deg,#005eff,#3b82f6);
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    box-shadow:0 10px 20px rgba(0,94,255,.25);
+    transition:.2s;
+}
+
+button[onclick="resolver()"]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 25px rgba(0,94,255,.4);
+}

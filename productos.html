@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - TechGuard</title>
+    <link rel="shortcut icon" href="img/descarga-removebg-preview (1).png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="stylenos.css">
+    <link rel="stylesheet" href="stylepr.css">
+    <link rel="stylesheet" href="telefono.css">
+    <!-- Plotly -->
+<script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================== HEADER ================== -->
+<header class="header" id="header">
+        <nav class="nav container">
+          <a href="index.html" class="navL">
+            <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="favicon" class="navL-img">
+            Calculadora Gauss Seidel
+          </a>
+          <div class="navM" id="nav-menu">
+            <ul class="navList">
+              <li class="navItem">
+                <a href="index.html" class="navLink active-link">Inicio</a>
+              </li>
+              <li class="navItem">
+                <a href="nosotros.html" class="navLink">Nosotros</a>
+              </li>
+              <li class="navItem">
+                <a href="productos.html" class="navLink">Calculadora</a>
+              </li>
+              <li class="navItem">
+                <a href="soporte.html" class="navLink">Soporte</a>
+              </li>
+            </ul>
+            <div class="navclose" id="nav-close">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+          <div class="navToggle" id="nav-toggle">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+        </nav>
+      </header>
+
+<!-- ================== MAIN ================== -->
+<main>
+
+<h1>Método de Gauss-Seidel</h1>
+
+    <div class="section">
+    <h2>Datos del sistema</h2>
+
+
+    <div class="controls">
+        <input type="number" id="n" min="2" value="3">
+        <button onclick="crearEntradas()">Crear matriz</button>
+    </div>
+
+    <div style="max-width:900px; margin:10px auto; font-size:14px; opacity:.8; line-height:1.5;">
+        <p><b>✔ Matriz A:</b> coeficientes de las variables del sistema.</p>
+        <p><b>✔ Vector b:</b> resultados de cada ecuación.</p>
+        <p><b>✔ x₀:</b> valores iniciales para comenzar las iteraciones.</p>
+    </div>
+
+    <div id="entradas"></div>
+</div>
+    <div id="entradas"></div>
+</div>
+
+<div class="section">
+    <h2>Parámetros</h2>
+
+    <div class="controls" style="flex-direction:column; align-items:center; gap:12px;">
+
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <label style="font-size:14px; opacity:.8;">Tolerancia</label>
+            <input type="number" id="tol" step="any" value="0.000001">
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <label style="font-size:14px; opacity:.8;">Iteraciones máximas</label>
+            <input type="number" id="maxIter" value="100">
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <label style="font-size:14px; opacity:.8;">Decimales</label>
+            <select id="decimales">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6" selected>6</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+
+    </div>
+
+</div>
+
+    <div style="max-width:900px; margin:10px auto; font-size:14px; opacity:.8; line-height:1.5;">
+        <p><b>✔ Decimales:</b> precisión con la que se muestran los resultados.</p>
+    </div>
+</div>
+
+<div class="controls">
+    <button onclick="resolver()">Resolver Gauss-Seidel</button>
+</div>
+
+<div id="salida"></div>
+
+</main>
+
+<!-- ================== FOOTER ================== -->
+<footer class="footer section">
+    <div class="footercontainer container grid">
+        <div class="footercontent">
+            <a href="#" class="footerL">
+                <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="TechGuard Logo" class="footer-img">
+                Gauss Seidel
+            </a>
+            <p class="footerdescription"><br>
+                Metodo iterativo para resolver sistemas de ecuaciones
+            </p>
+
+            <div class="footersocial">
+                <a href="https://www.facebook.com/profile.php?id=61575351277324" target="_blank" class="footersocial-link" title="Síguenos en Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/teach.guard" target="_blank" class="footersocial-link" title="Síguenos en Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@TeachGuard" target="_blank" class="footersocial-link" title="Visítanos en YouTube">
+                    <i class="bx bxl-youtube"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachguard7@gmail.com&su=atencion al cliente&body=Esto%20es%20una%20prueba" target="_blank" class="footersocial-link" title="Síguenos en Google">
+                    <i class="bx bxl-google"></i>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="bx bx-up-arrow-alt scrollupicon"></i>
+        </a>
+    </div>
+</footer>
+
+  <div class="navbar-custom">
+    <nav class="navbar-container">
+            
+</div>
+
+
+    <!--ENCABEZADO-->
+    <div class="encabezado">
+        <h6 id="footer-text">
+            Ⓒ 2025. TechGuard. Reservados todos los derechos mx | prod | 5921c999edda20d9a7ca637474539d734862014e |
+            <br>Realizado por Castro Bracamontes Sandra Marisol
+            <span id="fecha-hora"></span>
+        </h6>
+    </div>
+<!-- ================== SCRIPT ORIGINAL ================== -->
+<script>
+const nEl=document.getElementById("n"),tolEl=document.getElementById("tol"),
+maxIterEl=document.getElementById("maxIter"),
+entradas=document.getElementById("entradas"),
+salida=document.getElementById("salida");
+
+function crearEntradas(){
+ const n=+nEl.value;
+ let html=`<div class="table-container"><table><tr><th></th>`;
+ for(let j=0;j<n;j++)html+=`<th>x${j+1}</th>`;
+ html+=`<th>b</th><th>x₀</th></tr>`;
+ for(let i=0;i<n;i++){
+  html+=`<tr><th>Ecuación ${i+1}</th>`;
+  for(let j=0;j<n;j++)html+=`<td><input type="number" step="any" id="A_${i}_${j}" value="0"></td>`;
+  html+=`<td><input type="number" id="b_${i}" value="0"></td>
+          <td><input type="number" id="x_${i}" value="0"></td></tr>`;
+ }
+ entradas.innerHTML=html+`</table></div>`;
+}
+
+function resolver(){
+ const dec=+document.getElementById("decimales").value;
+ const f=v=>Number(v).toFixed(dec);
+ const n=+nEl.value;
+ let A=[],b=[],x=[];
+ for(let i=0;i<n;i++){
+  A[i]=[];
+  for(let j=0;j<n;j++)A[i][j]=+document.getElementById(`A_${i}_${j}`).value;
+  b[i]=+document.getElementById(`b_${i}`).value;
+  x[i]=+document.getElementById(`x_${i}`).value;
+ }
+ let xnew=[...x],iter=0,error=Infinity,xHist=[];
+ let html=`<div class="section"><h2>Iteraciones</h2><div class="table-container"><table><tr><th>Iter</th>`;
+ for(let j=0;j<n;j++)html+=`<th>x${j+1}</th>`;
+ html+=`<th>Error</th></tr>`;
+ while(error>tolEl.value && iter<maxIterEl.value){
+  iter++;let emax=0;
+  for(let i=0;i<n;i++){
+   let suma=b[i];
+   for(let j=0;j<n;j++)if(i!==j)suma-=A[i][j]*xnew[j];
+   let nuevo=suma/A[i][i];
+   emax=Math.max(emax,Math.abs(nuevo-xnew[i]));
+   xnew[i]=nuevo;
+  }
+  error=emax;xHist.push([...xnew]);
+  html+=`<tr><td>${iter}</td>`;
+  xnew.forEach(v=>html+=`<td>${f(v)}</td>`);
+  html+=`<td>${error.toExponential(3)}</td></tr>`;
+ }
+ html+=`</table></div></div><div class="section"><h2>Convergencia</h2><div id="grafica"></div></div>`;
+ salida.innerHTML=html;
+ animarConvergencia(xHist);
+}
+
+function animarConvergencia(xHist){
+ const n=xHist[0].length;
+ let data=[];
+ for(let j=0;j<n;j++)data.push({x:[],y:[],mode:'lines+markers',name:`x${j+1}`});
+ Plotly.newPlot("grafica",data,{
+  paper_bgcolor:"#122c4a",
+  plot_bgcolor:"#122c4a",
+  font:{color:"#eaeaea"},
+  margin:{t:30}
+ });
+ let k=0;
+ const timer=setInterval(()=>{
+  if(k>=xHist.length)return clearInterval(timer);
+  Plotly.extendTraces("grafica",
+   {x:Array(n).fill([k+1]),y:xHist[k].map(v=>[v])},
+   [...Array(n).keys()]);
+  k++;
+ },350);
+ 
+}
+// Generar matriz 2x2 automáticamente al cargar la página
+window.onload = function () {
+    nEl.value = 2;
+    crearEntradas();
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1692 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+@import url('./animations.css'); /* Importa las animaciones */
+
+/* Clase inicial para evitar el parpadeo */
+body:not(.js-enabled) .hidden {
+    opacity: 1; /* Asegura que los elementos sean visibles antes de que el JS se cargue */
+    transform: translateY(0);
+}
+
+/* Navbar informativo del footer estilo TechGuard */
+.navbar-custom {
+    background-color: #000000; /* fondo oscuro similar a header */
+    padding: 40px 100px;
+    color: #e0e6f1; /* gris claro */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+  }
+  
+  .navbar-item {
+    position: relative;
+    min-width: 180px;
+  }
+  
+  .navbar-item .nav-link {
+    font-weight: 600;
+    color: #0501ff; /* azul TechGuard */
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-item .nav-link:hover {
+    color: #70a3ff; /* azul claro para hover */
+  }
+  
+  /* Submenú */
+  .sub-menu {
+    display: block;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .sub-menu li {
+    list-style: none;
+    margin: 6px 0;
+  }
+  
+  .sub-menu li a {
+    color: #a8b1cc; /* gris azulado suave */
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .sub-menu li a:hover {
+    color: #3a82f7; /* azul TechGuard */
+  }
+
+/* Encabezado final */
+.encabezado {
+  background-color: #080a14; /* un poco más oscuro */
+  color: #8892b0; /* gris azulado */
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+body.js-enabled .hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Clase que activa la animación */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Resto del código existente */
+/*base*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.small-title {
+    font-size: 2rem;  /* Puedes ajustar este valor */
+    line-height: 1.2;
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+  
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 3.5rem 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: .938rem;
+    background: linear-gradient(90deg, #021c4d 0%, #05357b 100%);
+    color: #fff;
+}
+
+h1,h2,h3,h4{
+    color: #fff;
+    font-weight: 600;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input{
+    border: none;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: .938rem;
+}
+
+/*reutilisabes*/
+
+.section {
+    padding: 4.5rem 0 2rem;
+}
+
+.sectiontitle {
+    font-size: 2.25rem !important;
+    margin-bottom: 2rem;
+    text-align: center;
+    
+}
+
+.container {
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+}
+
+
+/*header*/
+/* Estilos para la sección ¿Por qué elegirnos? */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(90deg, #021c4d 0%, #05357b 100%);
+  }
+  
+/* Sección de "¿Por qué elegirnos?" */
+.why-choose-us {
+    padding: 80px 0;
+    background: linear-gradient(90deg, #021c4d 0%, #05357b 100%);
+    text-align: center;
+}
+
+.why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #0099ff;
+    margin: 15px auto;
+}
+
+/* Grid de tarjetas */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Tarjeta individual */
+.card {
+    background: #ffffff;
+    color: #000;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto espejo */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform: scaleY(-1);
+    opacity: 0.08;
+    filter: blur(8px);
+    pointer-events: none;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+}
+
+/* Efecto hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Ícono de la tarjeta */
+.card-icon {
+    font-size: 3rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+/* Texto de contenido */
+.card-content {
+    text-align: center;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.nav{
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.navL {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+    column-gap: .5rem;
+    font-weight: 500;
+}
+
+.navL-img {
+    width: 7rem;
+}
+
+.navLink,
+.navL,
+.navToggle,
+.navclose{
+    color: #fff;
+}
+
+.navToggle {
+  font-size: 1.25rem;
+  cursor: pointer;  
+}
+
+.navclose{
+    font-size: 1.8rem;
+    position: absolute;
+    top: .5rem;
+    right: .7rem;
+    cursor: pointer;
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+.navLink {
+    text-transform: uppercase;
+    font-weight: 900;
+    transition: .4s;
+}
+
+.show-menu {
+    top: 0;
+}
+
+.scroll-header {
+    background: #000c32;
+}
+
+.active-link {
+    position: relative;
+}
+
+.active-link::before {
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* SECCIÓN NOSOTROS */
+.nosotros {
+    padding: 4rem 0;
+    margin-top: 100px;
+}
+
+section[id] {
+    scroll-margin-top: 80px; /* Ajusta según el alto de tu header fijo */
+}
+
+.nosotroscont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 3rem;
+    opacity: 1; /* Asegura que el contenido siempre esté visible */
+}
+
+.nosotrosdata {
+    max-width: 600px;
+}
+
+.nosotrostitle {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.nosotrosdata h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #b0c4ff;
+    margin-bottom: 1rem;
+}
+
+.nosotrosdes {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.nosotrosgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nosotrosimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones de entrada para la sección sin ocultar al principio */
+.nosotrosdata {
+    animation: fadeInLeft 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.nosotrosgroup {
+    animation: fadeInRight 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.nosotrosimg {
+    animation: floatImage 6s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+
+/* Efecto hover para el contenedor */
+.nosotroscont:hover .nosotrosimg {
+    animation-duration: 4s;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/*BUTTONS*/
+.button {
+    display: inline-block;
+    background-color: #3678ff;
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #0557fc;
+}
+
+.buttonicon {
+    font-size: 1.25rem;
+}
+
+/*FOOTER*/
+.footer {
+    position: relative;
+    overflow: hidden; /* Fondo original que tenías */
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+}
+
+.footercontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Asegura que se adapte a pantallas más pequeñas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footercontent {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.footerL {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.nosotros, .why-choose-us, .seccion-mision-vision {
+    min-height: auto; /* Ajusta la altura automáticamente */
+}
+
+.footer-img {
+    width: 200px;  /* Tamaño de la imagen del logo */
+}
+
+.footerdescription {
+    margin-bottom: 2.5rem;
+    font-size: 14px;
+    color: #ffffff; /* Gris claro para el texto */
+    line-height: 1.5;
+}
+
+.footersocial {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footersocial-link {
+    display: inline-flex;
+    background-color: #003870; /* Fondo oscuro para iconos */
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.footersocial-link:hover {
+    background-color: #3498DB; /* Cambio de color al pasar el mouse */
+}
+
+/*SCROLL UP*/
+.scrollup {
+    position: fixed;
+    background: #000c32;
+    right: 1rem;
+    bottom: -20%;
+    display: inline-flex;
+    padding: .3rem;
+    border-radius: .25rem;
+    z-index: 10;
+    opacity: .8;
+    transition: .4s;
+}
+
+.scrollupicon {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.scrollup:hover {
+    background: #000c32;
+    opacity: 1;
+}
+
+.show-scroll {
+    bottom: 3rem;
+}
+
+/*SCROLL BAR*/
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: #413e3e;
+}
+::-webkit-scrollbar-thumb {
+    background: #272525;
+    border-radius: .5rem;
+}
+
+/* Estilos generales para las tarjetas */
+.seccion-mision-vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.seccion-mision-vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin:100px;
+    padding: 2rem;
+    background: linear-gradient(90deg, #000000 0%, #377adf 100%);
+    border-radius: 15px;
+    max-width: 1200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ESTILOS BASE DE TARJETAS */
+.tarjeta {
+    background-color: #1e2a3a; /* Fondo gris muy claro */
+    padding: 30px;
+    border-radius: 12px;
+    width: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ESTADO INICIAL PARA ANIMACIONES */
+.tarjeta-mision, .tarjeta-vision {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* ANIMACIONES DE ENTRADA */
+.tarjeta-mision {
+    animation: entradaTarjeta 0.8s ease-out 0.3s forwards;
+}
+
+.tarjeta-vision {
+    animation: entradaTarjeta 0.8s ease-out 0.6s forwards;
+}
+
+
+
+.tarjeta-icono {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tarjeta-mision .tarjeta-icono {
+    animation: pulse 2s infinite ease-in-out 0.5s;
+    background: linear-gradient(90deg, #3678ff, #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tarjeta-vision .tarjeta-icono {
+    animation: float 3s infinite ease-in-out 0.8s;
+    background: linear-gradient(90deg, #c333e7, #f94dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* EFECTOS HOVER */
+.tarjeta:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* BARRA INFERIOR ANIMADA */
+.tarjeta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3678ff, #6c5ce7);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta:hover::after {
+    transform: scaleX(1);
+}
+
+/* CONTENIDO DE TARJETAS */
+.tarjeta-titulo {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tarjeta-descripcion {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/*DESCUENTOS*/
+.discount-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.discount-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.discount-slide {
+    min-width: 100%;
+    padding: 2rem;
+    background: #000c32;
+    color: #fff;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.discount-slide h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.discount-slide p {
+    font-size: 1rem;
+}
+
+.discount-container:hover .discount-slider {
+    transform: translateX(-100%);
+}
+
+.discount-slider .discount-slide {
+    transition: transform 0.5s ease;
+}
+
+.discount-button {
+    background-color: #000c32;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
+}
+
+.discount-button:hover {
+    background-color: #0557fc;
+}
+
+/* Animación al hacer scroll */
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ¿Por qué elegirnos */
+.porque-elegirnos {
+    margin-top: 3rem;
+    text-align: center;
+}
+.tarjeta-info {
+    background-color: #ffffff15;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+}
+.tarjeta-icono {
+    font-size: 3rem;
+    color: #00bcd4;
+    margin-bottom: 1rem;
+}
+
+/* Nuestro equipo - Estilo libro */
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin-top: 2rem;
+}
+.tarjeta-libro {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+}
+.tarjeta-libro .cara {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff0d;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    transition: transform 0.8s ease;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tarjeta-libro .frente {
+    position: absolute;
+}
+.tarjeta-libro .atras {
+    transform: rotateY(180deg);
+    position: absolute;
+}
+.tarjeta-libro:hover .frente {
+    transform: rotateY(180deg);
+}
+.tarjeta-libro:hover .atras {
+    transform: rotateY(360deg);
+}
+
+/* Testimonios */
+.testimonios {
+    margin-top: 4rem;
+    text-align: center;
+}
+.testimonio-tarjeta {
+    background-color: #ffffff0d;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+.testimonio-cita {
+    font-style: italic;
+}
+.testimonio-autor {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+/* Swiper específico para testimonios */
+.swiper-testimonios {
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Efectos de hover */
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+/*ENCABEZADO*/
+
+.encabezado {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    height: 100px;            /* Asegura que el contenedor tenga una altura */
+}
+
+.encabezado h6 {
+    margin: 0;
+    padding: 0;
+    color: #c5c5c5;
+}
+/* ====================== */
+/* SECCIÓN DE EQUIPO */
+/* ====================== */
+.team-section {
+    padding: 80px 0;
+    background: linear-gradient(90deg, #021c4d 0%, #05357b 100%);
+}
+
+/* Contenedor centrado */
+.team-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Slider convertido en layout centrado */
+.team-slider {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+    transform: none !important;
+}
+
+/* Cada tarjeta */
+.team-slide {
+    width: 280px;
+}
+
+/* Tarjeta */
+.team-member {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover elegante (opcional, no exagerado) */
+.team-member:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* Imagen */
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 5px solid #3678ff;
+    box-shadow: 0 5px 15px rgba(54, 120, 255, 0.3);
+}
+
+/* Nombre */
+.team-name {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #021c4d;
+    font-weight: 600;
+}
+
+/* Rol */
+.team-role {
+    color: #3678ff;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    position: relative;
+    display: inline-block;
+}
+
+.team-role::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #00bcd4;
+    border-radius: 3px;
+}
+
+/* Redes */
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.team-social a {
+    color: #666;
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.team-social a:hover {
+    color: #3678ff;
+    transform: translateY(-3px);
+}
+
+/* Flechas de navegación */
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 20px;
+    color: #3678ff;
+}
+
+.slick-arrow:hover {
+    background: #3678ff;
+    color: white;
+    box-shadow: 0 5px 20px rgba(54, 120, 255, 0.4);
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+/* Puntos de navegación */
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    font-size: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.slick-dots .slick-active button {
+    background: #3678ff;
+    transform: scale(1.2);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-member {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .team-slide {
+        min-width: 240px;
+    }
+    
+    .slick-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .slick-prev {
+        left: -15px;
+    }
+    
+    .slick-next {
+        right: -15px;
+    }
+}
+
+.team-slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .team-slider {
+    display: flex;
+    width: max-content;
+    animation: scrollSlider 30s linear infinite;
+  }
+  
+  .team-slide {
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  @keyframes scrollSlider {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .team-slider-container:hover .team-slider {
+  animation-play-state: paused;
+}
+
+
+/* ====================== */
+/* SECCIÓN DE TESTIMONIOS */
+/* ====================== */
+.testimonials {
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    /* O usa una imagen de placeholder */
+    /* background-image: url('https://via.placeholder.com/1920x1080'); */
+}
+
+.testimonials-section {
+    background-color: var(--light-blue);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/testimonials-bg.jpg') center/cover;
+    opacity: 0.1;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.2);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    line-height: 1;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.testimonial-company {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* ====================== */
+/* RESPONSIVE DESIGN */
+/* ====================== */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 40px auto 0;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-card, .testimonial-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .support-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .support-hero {
+    text-align: center;
+    padding: 5rem 0 3rem 0;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .support-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/dots-pattern.png') center/cover;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  .support-hero h1 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0 1rem 0;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .support-hero h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 1rem auto;
+    border-radius: 2px;
+  }
+  
+  .support-hero p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+
+  /* Contenedor principal de comerciales */
+.commercial-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Estilos comunes para video y radio */
+.commercial-video,
+.radio-spot {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.commercial-video {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+.commercial-video:hover,
+.radio-spot:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Encabezado común */
+.commercial-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    color: white;
+}
+
+.commercial-header i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.header {
+    width: 100%;
+    background: linear-gradient(90deg, #021c4d 0%, #05357b 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+.commercial-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.commercial-badge {
+    margin-left: auto;
+    background: #e74c3c;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Pie de página común */
+.commercial-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: #f8f9fa;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.commercial-footer i {
+    margin-right: 0.25rem;
+}
+
+/* Estilos específicos para el video */
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: #000;
+    width: 100%;
+}
+
+.commercial-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene relación de aspecto sin recortar */
+}
+
+/* Asegurar que el overlay sea visible inicialmente */
+.video-overlay {
+    display: flex;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* Relación 16:9 */
+    background: #000;
+}
+
+.commercial-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.play-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+/* Transiciones para el overlay */
+#techguard-overlay {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+#techguard-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Asegurar que el video sea clickeable */
+#techguard-video {
+    cursor: pointer;
+}
+
+/* Estilos para el botón de play */
+#play-button {
+    z-index: 10;
+    position: relative;
+}
+
+/* Capa oscura de fondo para el overlay */
+#techguard-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.play-button:hover {
+    background: rgba(231, 76, 60, 0.8);
+    transform: scale(1.1);
+}
+
+/* Ocultar overlay cuando el video está reproduciendo */
+.video-wrapper.playing .video-overlay {
+    display: none;
+}
+
+/* Mostrar controles solo cuando sea necesario */
+.commercial-player[controls] {
+    cursor: pointer;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.play-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background: rgba(231, 76, 60, 0.8);
+    transform: scale(1.1);
+}
+
+.view-counter {
+    display: flex;
+    align-items: center;
+}
+
+.commercial-cta {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Estilos específicos para el audio */
+.audio-wrapper {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.radio-player {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.radio-station {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.frequency {
+    background: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.station-name {
+    font-weight: 600;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.download-link,
+.share-buttons {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.download-link:hover {
+    color: #3498db;
+}
+
+.share-buttons:hover {
+    color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .commercial-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene proporciones sin recortar */
+}
+
+.commercial-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.download-link, .share-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.download-link:hover, .share-buttons a:hover {
+    color: var(--verde); /* o el color que uses */
+}
+
+.calculator-section {
+    padding: 80px 20px;
+    color: white;
+}
+
+.calc-box {
+    max-width: 900px;
+    margin: auto;
+    background: #0b1e3d;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.calc-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.calc-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #3678ff;
+    background: white;
+    color: black;
+    pointer-events: auto;
+}
+
+.calc-box button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #3678ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#inputsSistema input {
+    margin-bottom: 8px;
+}
+
+pre {
+    background: black;
+    color: #00ffcc;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+}
+
+.calculator-section,
+.calculator-section * {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 9999;
+}
+
+/* ===== FIX HEADER FIXED ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Espacio para que el contenido NO quede debajo */
+main {
+    padding-top: 90px; /* ajusta si tu header es más alto */
+}
+
+/* ===== FIX CALCULADORA ===== */
+.calculator-section {
+    position: relative;
+    z-index: 10;
+}
+
+.calculator-section button,
+.calculator-section input {
+    pointer-events: auto;
+}

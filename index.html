@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/descarga-removebg-preview (1).png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="telefono.css">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <!--header-->
+    <header class="header" id="header">
+        <nav class="nav container">
+          <a href="index.html" class="navL">
+            <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="favicon" class="navL-img">
+            Calculadora Gauss Seidel
+          </a>
+          <div class="navM" id="nav-menu">
+            <ul class="navList">
+              <li class="navItem">
+                <a href="index.html" class="navLink active-link">Inicio</a>
+              </li>
+              <li class="navItem">
+                <a href="nosotros.html" class="navLink">Nosotros</a>
+              </li>
+              <li class="navItem">
+                <a href="productos.html" class="navLink">Calculadora</a>
+              </li>
+              <li class="navItem">
+                <a href="soporte.html" class="navLink">Soporte</a>
+              </li>
+            </ul>
+            <div class="navclose" id="nav-close">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+          <div class="navToggle" id="nav-toggle">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+        </nav>
+      </header>
+
+    <main class="main">
+        <!--HOME-->
+        <section class="home container" id="home">
+            <div class="swiper home-swipper">
+                <div class="swiper-wrapper">
+                    <section>
+                        <div class="homecont grid">
+                            <div class="homedata">
+                                <h1 class="hometitle">Gauss <br>Seidel</h1>
+                                <h2>Método iterativo para sistemas de ecuaciones lineales</h2>
+                                <p class="homedes">
+                                    El método de Gauss-Seidel es un procedimiento numérico iterativo utilizado para resolver sistemas de ecuaciones lineales. 
+                                    Se basa en aproximaciones sucesivas que mejoran la solución en cada iteración hasta alcanzar la convergencia.
+                                </p>
+                                <div class="homebut">
+                                    <a href="productos.html" class="button">Teoria</a>
+                                    <a href="soporte.html" class="button">Ejemplos</a>
+                                </div>
+                            </div>
+                            <div class="homegroup">
+                                <img src="imagenes/1b2c3d2bfd5eeb87e1b227a0463fea2e.jpg" alt="" class="homeimg">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!--CATEGORY-->
+        <section class="section category">
+
+            <h2 class="sectiontitle">Conceptos <br /> Clave</h2>
+
+            <div class="categorycontainer container grid">
+
+                <div class="categorydata">
+                    <img src="imagenes/images.png" alt="Iteraciones">
+                    <h3 class="categorytitle">Iteraciones</h3>
+                    <p class="categorydescription">El método mejora la solución en cada repetición hasta acercarse al resultado real.</p>
+                </div>
+
+                <div class="categorydata">
+                    <img src="imagenes/" alt="Convergencia">
+                    <h3 class="categorytitle">Convergencia</h3>
+                    <p class="categorydescription">El proceso converge cuando los valores dejan de cambiar significativamente.</p>
+                </div>
+
+                <div class="categorydata">
+                    <img src="imagenes/" alt="Sistema de ecuaciones">
+                    <h3 class="categorytitle">Sistemas lineales</h3>
+                    <p class="categorydescription">Se utiliza para resolver sistemas de ecuaciones con múltiples incógnitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--ABOUT-->
+        <section class="section about" id="about">
+
+            <div class="aboutcontainer container grid">
+                <img src="img/about-img.png" alt="" class="abouting">
+                <div class="aboutdata">
+                    <h2 class="sectiontitle abouttitle">Método <br>Gauss-Seidel</h2>
+                    <p class="aboutdescription">El método de Gauss-Seidel es una técnica numérica que resuelve sistemas de ecuaciones lineales del tipo Ax = b. 
+                    Mejora el método de Jacobi utilizando los valores más recientes en cada iteración, lo que acelera la convergencia.</p>
+                    <a href="nosotros.html" class="button">Ver explicación</a>
+                </div>
+            </div>
+        </section>
+
+         <!--PRODUCTS-->
+         <section class="section product" id="product">
+            <h2 class="sectiontitle">Pasos del método</h2>
+            <div class="productcontainer container grid">
+                <!-- Producto Guardian Basic -->
+                <div class="productcontent">
+                    <a href="productos.html#guardianbasic">
+                        <img src="img/productos1.png" alt="Guardian Basic" class="productimg">
+                        <h3 class="producttitle">1. Despejar variables</h3>
+                        <span class="productsubtitle">Reorganizar el sistema</span>
+                        <span class="productprice">Paso inicial</span>
+                        <button class="button productbutton" onclick="agregarProducto('Guardian Basic', 100)">
+                            <i class="bx bx-cart-alt producticon"></i>
+                        </button>                    
+                    </a>
+                </div>
+        
+                <!-- Producto Vision Guard -->
+                <div class="productcontent">
+                    <a href="productos.html#visionguard">
+                        <img src="img/productos2.png" alt="Vision Guard" class="productimg">
+                        <h3 class="producttitle">2. Iterar valores</h3>
+                        <span class="productsubtitle">Actualizar aproximaciones</span>
+                        <span class="productprice">Proceso</span>
+                        <button class="button productbutton" onclick="agregarProducto('Vision Guard', 500)">
+                        <i class="bx bx-cart-alt producticon"></i>
+                      </button>   
+                    </a>                 
+                </div>
+        
+                <!-- Producto TechShield -->
+                <div class="productcontent">
+                    <a href="productos.html#techshield">
+                        <img src="img/productos3.png" alt="TechShield" class="productimg">
+                        <h3 class="producttitle">3. Verificar convergencia</h3>
+                        <span class="productsubtitle">Comprobar estabilidad</span>
+                        <span class="productprice">Resultado</span>
+                        <button class="button productbutton" onclick="agregarProducto('TechShield', 2000)">
+                        <i class="bx bx-cart-alt producticon"></i>
+                        </button> 
+                    </a>                   
+                </div>
+        
+                <!-- Producto Guard360 -->
+                <div class="productcontent">
+                    <a href="productos.html#guard360">
+                        <img src="img/productos4.png" alt="Guard360" class="productimg">
+                        <h3 class="producttitle">4. Solución final</h3>
+                        <span class="productsubtitle">Valores aproximados</span>
+                        <span class="productprice">Final</span> 
+                        <button class="button productbutton" onclick="agregarProducto('Guard360', 10000)">
+                        <i class="bx bx-cart-alt producticon"></i>
+                        </button>     
+                    </a>               
+                </div>
+            </div>
+        </section>
+        
+
+        <!--DESCUENTOS-->
+        <section class="section discount">
+            <h2 class="sectiontitle">Ventajas</h2>
+            <div class="discount-container container">
+              <div class="discount-slider">
+                <div class="discount-slide">
+                  <h3>Ventaja: Rápida convergencia</h3>
+                    <p>En muchos casos converge más rápido que Jacobi.</p>
+                  <button class="discount-button" onclick="location.href='productos.html'">Ver Más</button>
+                </div>
+                <div class="discount-slide">
+                  <h3>Ventaja: Menor uso de memoria</h3>
+                    <p>No requiere almacenar múltiples matrices de iteración.</p>
+                  <button class="discount-button" onclick="location.href='productos.html'">Ver Más</button>
+                </div>
+                <div class="discount-slide">
+                  <h3>Ventaja: Fácil implementación</h3>
+                    <p>Se puede programar fácilmente en C#, Python o MATLAB.</p>
+                  <button class="discount-button" onclick="location.href='productos.html'">Ver Más</button>
+                </div>
+              </div>
+            </div>
+          </section>          
+
+        <!--CORREO-->
+        <section class="section newsletter">
+            <div class="newslc container">
+              <h2 class="sectiontitle">Contacto académico</h2>
+              <p class="newsld">
+                ¿Tienes dudas sobre el método o su funcionamiento?
+                Envíanos un correo y con gusto te apoyamos.
+              </p>
+              <!-- 1) SIN ningún action para que no vaya a Formspree -->
+              <form id="newsletter-form">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Correo"
+                  class="newslin"
+                  required
+                />
+                <button type="submit" class="button2">Enviar correo</button>
+              </form>
+              <div id="response-message" class="hidden-message">
+                Gracias por confiar en nosotros. ¡Revisa tu bandeja de entrada!
+              </div>
+            </div>
+          </section>
+                
+    </main>
+
+    <!--FOOTER-->
+<footer class="footer section">
+    <div class="footercontainer container grid">
+        <div class="footercontent">
+            <a href="#" class="footerL">
+                <img src="imagenes/Gemini_Generated_Image_nfzgennfzgennfzg-removebg-preview.png" alt="TechGuard Logo" class="footer-img">
+                Gauss Seidel
+            </a>
+            <p class="footerdescription"><br>
+                Metodo iterativo para resolver sistemas de ecuaciones
+            </p>
+
+            <div class="footersocial">
+                <a href="https://www.facebook.com/profile.php?id=61575351277324" target="_blank" class="footersocial-link" title="Síguenos en Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/teach.guard" target="_blank" class="footersocial-link" title="Síguenos en Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@TeachGuard" target="_blank" class="footersocial-link" title="Visítanos en YouTube">
+                    <i class="bx bxl-youtube"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachguard7@gmail.com&su=atencion al cliente&body=Esto%20es%20una%20prueba" target="_blank" class="footersocial-link" title="Síguenos en Google">
+                    <i class="bx bxl-google"></i>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="bx bx-up-arrow-alt scrollupicon"></i>
+        </a>
+    </div>
+</footer>
+
+  <div class="navbar-custom">
+    <nav class="navbar-container">
+            
+</div>
+
+
+    <!--ENCABEZADO-->
+    <div class="encabezado">
+        <h6 id="footer-text">
+            Ⓒ 2025. TechGuard. Reservados todos los derechos mx | prod | 5921c999edda20d9a7ca637474539d734862014e |
+            <br>Realizado por Castro Bracamontes Sandra Marisol
+            <span id="fecha-hora"></span>
+        </h6>
+    </div>
+
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <!-- 3) Tu lógica de newsletter -->
+  <script src="js/newsletter.js"></script>
+  <!-- 4) Otros scripts de tu web -->
+  <script src="js/encabezado.js"></script>
+  <script src="js/scrollreveal.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/descuento.js"></script>
+  <script src="js/horarios.js"></script>
+</body>
+</html>
