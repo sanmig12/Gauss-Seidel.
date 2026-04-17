@@ -74,8 +74,6 @@
 
     <div id="entradas"></div>
 </div>
-    <div id="entradas"></div>
-</div>
 
 <div class="section">
     <h2>Parámetros</h2>
@@ -300,12 +298,13 @@ function animarConvergencia(xHist) {
     }, 150);
 }
 
-/* ================= RESOLVER ================= */
+/* =================  ================= */
 
 function resolver() {
     const n = +nEl.value;
     const tol = parseFloat(tolEl.value);
     const maxIter = +maxIterEl.value;
+    const dec = parseInt(document.getElementById("decimales").value);
 
     let A = [], b = [], x = [];
 
