@@ -105,3 +105,49 @@ button[onclick="resolver()"]:hover{
     transform:translateY(-2px);
     box-shadow:0 15px 25px rgba(0,94,255,.4);
 }
+
+/* ===== TABLA MÁS PROFESIONAL ===== */
+
+table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-family: monospace; /* 🔥 clave para alinear números */
+}
+
+th {
+    background: #16395f;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+}
+
+td {
+    border: 1px solid var(--border);
+    padding: 8px;
+    text-align: right; /* 🔥 números alineados */
+}
+
+/* Columna de iteración centrada */
+td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== COLORES DE ERROR ===== */
+
+.error-ok {
+    color: #00ff88;   /* verde */
+    font-weight: bold;
+}
+
+.error-warn {
+    color: #ffcc00;   /* amarillo */
+    font-weight: bold;
+}
+
+/* ===== EFECTO HOVER ===== */
+
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
