@@ -417,6 +417,21 @@ function resolver() {
     // Calcula residuo final
     let res = residuo(A, xnew, b);
 
+    // ================== MOSTRAR ITERACIONES ==================
+salida.innerHTML = `<b>Iteraciones:</b><br><br>`;
+
+xHist.forEach((valores, k) => {
+    salida.innerHTML += `Iteración ${k + 1}: `;
+
+    valores.forEach((v, i) => {
+        salida.innerHTML += `x${i + 1} = ${v.toFixed(dec)} `;
+    });
+
+    salida.innerHTML += `<br>`;
+});
+
+salida.innerHTML += `<br><hr><br>`;
+
     // Muestra resultados finales
     salida.innerHTML = `Resultado final:<br>`;
     for (let i = 0; i < n; i++) {
