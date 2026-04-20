@@ -74,8 +74,6 @@
 
     <div id="entradas"></div>
 </div>
-    <div id="entradas"></div>
-</div>
 
 <div class="section">
     <h2>Parámetros</h2>
@@ -253,6 +251,11 @@ tr:hover {
     border-radius: 10px;
 }
 
+.error-bad {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
 .ecuacion {
     margin-bottom: 10px;
     padding: 10px;
@@ -299,21 +302,34 @@ function validarDatos(A, b, x) {
     return true;
 }
 
-/* ================= DIAGONAL DOMINANTE ================= */
-
-function hacerDiagonalDominante(A, b, x) {
+function esDiagonalDominante(A) {
     const n = A.length;
 
-    let filas = [...Array(n).keys()];
+    for (let i = 0; i < n; i++) {
+        let suma = 0;
 
-    filas.sort((i, j) => {
-        return Math.abs(A[j][j]) - Math.abs(A[i][i]);
-    });
+        for (let j = 0; j < n; j++) {
+            if (i !== j) suma += Math.abs(A[i][j]);
+        }
+
+        if (Math.abs(A[i][i]) < suma) return false;
+    }
+
+    return true;
+}
+/* ================= DIAGONAL DOMINANTE ================= */
+
+function intentarReordenar(A, b, x) {
+    const n = A.length;
+
+    let indices = [...Array(n).keys()];
+
+    indices.sort((i, j) => Math.abs(A[j][j]) - Math.abs(A[i][i]));
 
     return {
-        A: filas.map(i => A[i]),
-        b: filas.map(i => b[i]),
-        x: filas.map(i => x[i])
+        A: indices.map(i => A[i]),
+        b: indices.map(i => b[i]),
+        x: indices.map(i => x[i])
     };
 }
 
@@ -414,8 +430,15 @@ function resolver() {
         return;
     }
 
-    let orden = hacerDiagonalDominante(A, b, x);
-    A = orden.A; b = orden.b; x = orden.x;
+let dominanteAntes = esDiagonalDominante(A);
+
+let reordenado = intentarReordenar(A, b, x);
+
+let dominanteDespues = esDiagonalDominante(reordenado.A);
+
+A = reordenado.A;
+b = reordenado.b;
+x = reordenado.x;
 
     for (let i = 0; i < n; i++) {
         if (A[i][i] === 0) {
@@ -431,9 +454,26 @@ function resolver() {
     let xnew = [...x];
     let xHist = [];
 
-    let html = `
-    <div class="section">
-    <h2>Iteraciones</h2>
+    let estadoMatriz = "";
+
+if (dominanteAntes) {
+    estadoMatriz = "✔ La matriz ya era diagonal dominante";
+} else if (dominanteDespues) {
+    estadoMatriz = "✔ Se reordenó la matriz para hacerla diagonal dominante";
+} else {
+    estadoMatriz = "⚠ No se pudo hacer diagonal dominante (puede no converger)";
+}
+
+let html = `
+<div class="section">
+<h2>Estado de la matriz</h2>
+<p>${estadoMatriz}</p>
+</div>
+`;
+
+html += `
+<div class="section">
+<h2>Iteraciones</h2>
     <div class="table-container">
     <table>
     <tr>
@@ -464,7 +504,9 @@ function resolver() {
         html += `<tr><td>${iter}</td>`;
         xnew.forEach(v => html += `<td>${v.toFixed(dec)}</td>`);
 
-        let claseError = errorAbs < tol ? "error-ok" : "error-warn";
+        let claseError = errorAbs < tol ? "error-ok" :
+                 errorAbs > errorAnterior ? "error-bad" :
+                 "error-warn";
         html += `<td class="${claseError}">${errorAbs.toExponential(3)}</td></tr>`;
 
         if (errorAbs < tol) break;
@@ -528,8 +570,8 @@ function resolver() {
         ecuacionesHTML += `
         <div class="ecuacion">
             <b>Ecuación ${i + 1}</b><br>
-            ${linea} = <b>${suma.toFixed(6)}</b><br>
-            b = ${b[i].toFixed(6)}<br>
+            ${linea} = <b>${suma.toFixed(dec)}</b><br>
+            b = ${b[i].toFixed(dec)}<br>
             Error = ${(Math.abs(suma - b[i])).toExponential(3)}
         </div>`;
     }
