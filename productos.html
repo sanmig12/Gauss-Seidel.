@@ -462,14 +462,19 @@ function resolver() {
     }
 
 let dominanteAntes = esDiagonalDominante(A);
+let dominanteDespues = dominanteAntes;
 
-let reordenado = intentarReordenar(A, b, x);
+if (!dominanteAntes) {
+    let reordenado = intentarReordenar(A, b, x);
 
-let dominanteDespues = esDiagonalDominante(reordenado.A);
+    dominanteDespues = esDiagonalDominante(reordenado.A);
 
-A = reordenado.A;
-b = reordenado.b;
-x = reordenado.x;
+    if (dominanteDespues) {
+        A = reordenado.A;
+        b = reordenado.b;
+        x = reordenado.x;
+    }
+}
 
     for (let i = 0; i < n; i++) {
         if (A[i][i] === 0) {
